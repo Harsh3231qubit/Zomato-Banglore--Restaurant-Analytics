@@ -11,6 +11,7 @@
 - [Business KPIs](#-business-kpis)
 - [SQL Analysis — Queries & Business Significance](#-sql-analysis--queries--business-significance)
 - [Dashboard](#-dashboard)
+- [Key Insights](#-key-insights)
 - [Project Structure](#-project-structure)
 
 
@@ -205,7 +206,17 @@ LIMIT 25;
 
 
 ---
+## 📌 Key Insights
 
+- 🏙️ **Restaurant distribution is heavily concentrated in Bangalore's IT corridors**, with Electronic City, Marathahalli, HSR, and Whitefield accounting for the highest restaurant density, reflecting strong demand from working professionals.
+
+- 🚚 **Home delivery has become the industry standard**, with over **99% of restaurants offering delivery**. Delivery-enabled restaurants receive **16× more customer reviews** on average, highlighting significantly higher customer engagement and online visibility.
+
+- 🍛 **North Indian cuisine dominates the food landscape**, generating the highest customer engagement with **4.59 million reviews**, followed by **South Indian (2.59 million)** and **Biryani (2.48 million)**, making them the most popular cuisines in Bangalore.
+
+- ⭐ **Top-rated restaurants are spread across multiple localities** rather than being concentrated in premium neighborhoods, indicating that exceptional dining experiences are available throughout the city.
+
+- 💰 **Affordable South Indian restaurants consistently deliver outstanding customer satisfaction**, with several eateries achieving **4.8–4.9 ratings** while charging only **₹100–₹150 for two**, demonstrating that **value for money is a stronger driver of customer satisfaction than high pricing**.
 
 
 ## 📁 Project Structure
@@ -221,8 +232,8 @@ BANGALORE_ZOMATO_ANALYTICS_PROJECT/
 │
 ├── data/
 │   ├── raw/
-│   │   ├── BangaloreZomatoData.csv
-│   │   └── BangaloreZomatoData_clean.csv
+│   │   |── BangaloreZomatoData.csv
+│   │  
 │   │
 │   └── processed/
 │       └── BangaloreZomatoData_clean.csv
@@ -254,6 +265,4 @@ BANGALORE_ZOMATO_ANALYTICS_PROJECT/
     └── app.py
 
 ---
-
-
 
