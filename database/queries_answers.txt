@@ -1,0 +1,174 @@
+======================================================================
+QUERY 1
+======================================================================
+         locality  restaurant_count  avg_dinner_rating  avg_cost_for_two_people
+  Electronic City               673               3.60                    278.0
+     Marathahalli               484               3.55                    301.0
+              HSR               457               3.73                    313.0
+       Whitefield               447               3.66                    337.0
+              BTM               397               3.64                    258.0
+      Indiranagar               292               3.87                    480.0
+         JP Nagar               292               3.74                    355.0
+    Sarjapur Road               284               3.68                    330.0
+      Rajajinagar               237               3.61                    301.0
+     New BEL Road               231               3.68                    335.0
+     Banashankari               216               3.54                    260.0
+        Jayanagar               214               3.67                    373.0
+     Kalyan Nagar               209               3.73                    395.0
+        Bellandur               199               3.56                    297.0
+Bannerghatta Road               194               3.52                    312.0
+
+======================================================================
+QUERY 2
+======================================================================
+ is_home_delivery  restaurant_count  avg_delivery_rating  avg_delivery_reviews
+                0                19                 3.79                 122.0
+                1              8902                 3.88                2019.0
+
+======================================================================
+QUERY 3
+======================================================================
+primary_cuisine  listings  total_reviews  avg_cost_for_two
+   North Indian      1619      4594638.0             386.0
+   South Indian       958      2593178.0             279.0
+        Biryani       970      2479334.0             301.0
+         Burger       225       993302.0             289.0
+        Chinese       643       887264.0             394.0
+         Mithai       192       881296.0             203.0
+          Pizza       286       612846.0             350.0
+    Continental        87       519638.0             877.0
+         Kerala       128       508213.0             334.0
+         Andhra       129       475170.0             526.0
+
+======================================================================
+QUERY 4
+======================================================================
+                                         locality                                                      name  dinner_rating  dinner_reviews  rank_in_locality
+                                   1 MG Road Mall                                                  Yauatcha            4.7            2933                 1
+                                   1 MG Road Mall                                                  Fruitify            3.4               4                 2
+                                 153 Biere Street                                     SLV Corner Restaurant            4.1             468                 1
+                                       5th Avenue                                                Thai House            4.1             167                 1
+                                Abhimaani Vasathi                                             Coastal Spice            3.1              72                 1
+             Aloft Bengaluru Cessna Business Park                                           Nandhini Deluxe            3.1             529                 1
+                                      Aloft Hotel                                       Estia - Aloft Hotel            3.9              89                 1
+                                      Aloft Hotel                                     Dot.yum - Aloft Hotel            3.7             299                 2
+                             Ascendas Park Square                                           Barbeque Nation            4.5            2568                 1
+                             Ascendas Park Square                                           Deccan Paradise            4.2             454                 2
+                             Ascendas Park Square                                         Amoeba Sports Bar            4.0             667                 3
+                                    Ashraya Hotel                                                 Aathithya            3.0              19                 1
+                                              BTM                                 AB's - Absolute Barbecues            4.7            7984                 1
+                                              BTM                                                 Nagarjuna            4.3            1702                 2
+                                              BTM                                         XO Belgian Waffle            4.3             613                 3
+                                     Banashankari                                                   Vinny's            4.3            2334                 1
+                                     Banashankari                                           Szechuan Dragon            4.3            1766                 2
+                                     Banashankari                                             Stoned Monkey            4.3             908                 3
+                                        Banaswadi                                Saffron Vegetarian Cuisine            4.2             692                 1
+                                        Banaswadi                                              An Egg Story            4.1             296                 2
+                                        Banaswadi                                          29 Degrees North            3.9             254                 3
+                                Bangalore Central                                                  Rajdhani            4.1             873                 1
+                                Bangalore Central                                                       KFC            3.1             315                 2
+                                Bangalore Central                                                McDonald's            3.0             329                 3
+                                Bannerghatta Road                                                   Chianti            4.6            1257                 1
+                                Bannerghatta Road                                         Natural Ice Cream            4.4             612                 2
+                                Bannerghatta Road                                                  Fattoush            4.2            2040                 3
+                                    Barton Centre                                            The 13th Floor            4.4            5728                 1
+                                    Barton Centre                                                     Ebony            4.3            3542                 2
+                                     Basavanagudi                                      Brahmin's Coffee Bar            4.9            2976                 1
+                                     Basavanagudi                                          Puliyogare Point            4.3             753                 2
+                                     Basavanagudi                                               Kabab Magic            4.2             999                 3
+                               Basaveshwara Nagar                                                 Le Arabia            4.4            1474                 1
+                               Basaveshwara Nagar                                                    Onesta            4.3            1350                 2
+                               Basaveshwara Nagar                                       Priyadarshini Grand            4.2             626                 3
+                                        Bellandur                             Tipsy Bull - The Bar Exchange            4.3            3112                 1
+                                        Bellandur                                              Pepe's Pizza            4.2             607                 2
+                                        Bellandur                                                   Sichuan            4.2             458                 3
+                                   BluPetal Hotel                                          Sultans Of Spice            4.4            4272                 1
+                                     Bommanahalli                                         Sardarji Ka Dhaba            4.1             646                 1
+                                     Bommanahalli                                               Hotel Salam            4.0             241                 2
+                                     Bommanahalli                                           Krishna Kuteera            4.0             233                 3
+                                      Bommasandra                                            Pizza Republic            3.9             247                 1
+                                      Bommasandra                                Anand Sweets and Savouries            3.9               3                 2
+                                      Bommasandra                              HBH Hyderabadi Biryani House            3.8              59                 3
+                                     Brigade Road                                    Hotel Tom's Restaurant            4.5             839                 1
+                                     Brigade Road                                                    Plan B            4.3            4645                 2
+                                     Brigade Road                                            Taste Of Tibet            4.0             417                 3
+                                      Brookefield                                    Chulha Chauki Da Dhaba            4.4            4464                 1
+                                      Brookefield                                              The Fat Chef            4.3            1708                 2
+                                      Brookefield                              Kesar Sweet Shop & Fast Food            4.3            1334                 3
+                                Brookefields Mall                                                       NH8            4.3            1092                 1
+                                Brookefields Mall                                                      Boho            4.2            1042                 2
+                                Brookefields Mall                                                 Taco Bell            4.0             819                 3
+                                       By The Way                                              Chef Baker's            2.9              14                 1
+                                   CV Raman Nagar                                             Mother's Meal            4.0             158                 1
+                                   CV Raman Nagar                                                  Kolkataz            3.9             103                 2
+                                   CV Raman Nagar                                            Magical Spices            3.9              48                 3
+                                Chairman's Resort                               Havelli - Chairman's Resort            2.8             151                 1
+                                    Church Street                                                 Brik Oven            4.8            2803                 1
+                                    Church Street                                      Church Street Social            4.4            7997                 2
+                                    Church Street                                            Mainland China            4.4            2134                 3
+                                      City Market                                     Chikkanna Tiffin Room            4.2             263                 1
+                                      City Market                                 SGS Non Veg - Gundu Pulav            4.1             241                 2
+                                      City Market                                          N.V. Naidu Hotel            3.8              68                 3
+                                     Coastal King                                   Coastal King Restaurant            3.8             114                 1
+                                     Coastal King                     Roots Lounge Bar - Coastal King Hotel            3.6              18                 2
+                                Comfort Inn Insys                                  Cinders Rooftop Barbeque            4.0             244                 1
+                                Comfort Inn Insys                                       Pavilion Restaurant            3.9             129                 2
+                                Commercial Street                                             RS Shiv Sagar            4.2             589                 1
+                                Commercial Street                                               Burger King            4.1             731                 2
+                                Commercial Street                                         Sreeraj Lassi Bar            3.8             176                 3
+                                        Coraltree                                         Kudla - Coraltree            3.9             348                 1
+                  Courtyard by Marriott Bengaluru                   The Hebbal Cafe - Courtyard By Marriott            4.1             244                 1
+                                  Cunningham Road                                              Pasta Street            4.6            2963                 1
+                                  Cunningham Road                            Infinitea Tea Room & Tea Store            4.4             947                 2
+                                  Cunningham Road                                            Dolci Desserts            4.3             755                 3
+                                           Domlur                                         Santé Spa Cuisine            4.7             923                 1
+                                           Domlur                                                   Momomia            4.0              69                 2
+                                           Domlur                                           Chungs Pavilion            3.9             251                 3
+                      DoubleTree Suites By Hilton                  Asia Alive - DoubleTree Suites By Hilton            4.0             348                 1
+                            Eden Park Restaurants                            Divina - Eden Park Restaurants            4.0             163                 1
+                                          Ejipura                                         Momo Rice Noodles            3.9             215                 1
+                                          Ejipura                                            Tomba Kitchens            3.9              78                 2
+                                          Ejipura                                             Maven Kitchen            3.8              37                 3
+                                  Electronic City                                          The Big Barbeque            4.5            6983                 1
+                                  Electronic City                                           Barbeque Nation            4.5            4757                 2
+                                  Electronic City                                      46 Ounces Brewgarden            4.5            3026                 3
+                                    Elements Mall                                          One For The Road            4.4            2410                 1
+                                    Elements Mall                                               Aaha Andhra            3.5              26                 2
+                            Fairfield by Marriott                              Kava - Fairfield By Marriott            4.1             872                 1
+                            Fairfield by Marriott                                                 Dose Mane            3.4               7                 2
+                                       Forum Mall                                                   Toscano            4.5            1382                 1
+                                       Forum Mall                      Salt - Indian Restaurant Bar & Grill            4.5            1331                 2
+                                       Forum Mall                                              Krispy Kreme            4.2             469                 3
+                         Forum Neighbourhood Mall                                             Pind Balluchi            4.0             445                 1
+                         Forum Neighbourhood Mall                             
+
+======================================================================
+QUERY 5
+======================================================================
+                     name primary_cuisine              locality  dinner_rating  average_cost  cuisine_avg_rating  cuisine_median_cost
+           CTR Shri Sagar    South Indian          Malleshwaram            4.9           150            3.547758                300.0
+     Brahmin's Coffee Bar    South Indian          Basavanagudi            4.9           100            3.547758                300.0
+        Natural Ice Cream       Ice Cream Koramangala 1st Block            4.8           300            3.695833                350.0
+            Arogya Ahaara    South Indian                   HSR            4.8           100            3.547758                300.0
+        Natural Ice Cream       Ice Cream           Indiranagar            4.8           300            3.695833                350.0
+        Once Upon A Flame           Steak                   HSR            4.7          1400            4.600000               1450.0
+        Santé Spa Cuisine   Mediterranean                Domlur            4.7          1500            4.100000               1550.0
+      Hari Super Sandwich       Fast Food             Jayanagar            4.6           200            3.599346                350.0
+           Art of Delight       Ice Cream        Residency Road            4.6           300            3.695833                350.0
+         S N Refreshments    South Indian              JP Nagar            4.6           100            3.547758                300.0
+          Phobidden Fruit      Vietnamese           Indiranagar            4.6          1100            4.550000               1150.0
+The Hole In The Wall Cafe            Cafe Koramangala 4th Block            4.6           600            3.889091                700.0
+        Third Wave Coffee          Coffee Koramangala 4th Block            4.6           400            3.342105                600.0
+             Nasi And Mee           Asian Koramangala 4th Block            4.6           800            4.160714               1200.0
+         House Of Commons        Bar Food              JP Nagar            4.5          1400            4.327273               1500.0
+          Manjit Da Dhaba    North Indian           Frazer Town            4.5           200            3.650000                500.0
+        Natural Ice Cream       Ice Cream     Bannerghatta Road            4.4           300            3.695833                350.0
+       Raghavendra Tiffin         Chinese Koramangala 1st Block            4.4           250            3.638168                500.0
+       Raghavendra Tiffin    South Indian                   HSR            4.4           150            3.547758                300.0
+        Natural Ice Cream       Ice Cream         Sarjapur Road            4.4           300            3.695833                350.0
+  Falahaar & Kota Kachori    North Indian Koramangala 7th Block            4.4           400            3.650000                500.0
+         House Of Commons        Bar Food Koramangala 5th Block            4.4          1400            4.327273               1500.0
+             Asha Tiffins    South Indian                   HSR            4.4           200            3.547758                300.0
+  BYLI - Bet You Love It!     Continental          Kalyan Nagar            4.4           800            4.100000               1500.0
+              Sagar Hotel    North Indian           Rajajinagar            4.4           400            3.650000                500.0
+
