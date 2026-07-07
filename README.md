@@ -50,7 +50,7 @@ This project cleans, explores, and analyzes a real-world Zomato restaurant datas
 | **Visualization (EDA)** | Matplotlib, Seaborn |
 | **Data Querying / Analysis** | SQL (window functions, CTEs, aggregate analytics) |
 | **Notebook Environment** | Jupyter Notebook |
-| **Dashboarding / BI** | Streamlit |
+| **Dashboard** | Streamlit, Plotly|
 | **Version Control** | Git & GitHub |
 
 ---
@@ -77,8 +77,6 @@ Interactive Dashboard (Streamlit,Plotly,Pandas)
 
 ## 🧹 Data Cleaning & EDA
 
-Performed in [`data_cleaning_EDA.ipynb`](notebooks\data_cleaning_EDA.ipynb):
-
 - **Column standardization** — trimmed/renamed inconsistent headers (e.g. `Dinner Ratings`, `Delivery Ratings`)
 - **Locality extraction** — parsed the `Area` field into a clean `Locality` column for neighborhood-level analysis
 - **Cuisine normalization** — derived a `Primary_Cuisine` field from the multi-value `Cuisines` string to enable clean group-bys
@@ -103,9 +101,6 @@ Performed in [`data_cleaning_EDA.ipynb`](notebooks\data_cleaning_EDA.ipynb):
 | KPI | Description |
 |---|---|
 | **Restaurant Density per Locality** | Count of restaurants per locality — identifies supply concentration |
-| **Average Dinner Rating (by Locality/Cuisine)** | Measures quality of experience where competition is highest |
-| **Home Delivery Satisfaction Gap** | Difference in average delivery rating between delivery-enabled vs. non-delivery restaurants |
-| **Review-Volume-Weighted Cuisine Popularity** | Total review count per cuisine — a better popularity proxy than listing count alone |
 | **Average Cost for Two** | Core pricing KPI, tracked by locality and cuisine |
 | **Top 3 Restaurants per Locality** | "Best-in-neighborhood" leaderboard, ranked by rating and review volume |
 | **Value Score (Hidden Gems)** | Restaurants rated above their cuisine's average while priced below the cuisine's median cost |
@@ -114,8 +109,7 @@ Performed in [`data_cleaning_EDA.ipynb`](notebooks\data_cleaning_EDA.ipynb):
 
 ## 🗃️ SQL Analysis — Queries & Business Significance
 
-All queries run against the cleaned `zomato_restaurants` table. Full script: [`analysis_queries.sql`](database\analysis_queries.sql)
-
+All queries run against the cleaned `zomato_restaurants` table.
 ### Q1 — Restaurant Density & Quality by Locality
 ```sql
 SELECT locality, COUNT(*) AS restaurant_count,
@@ -196,23 +190,18 @@ LIMIT 25;
 
 
 ### 🖼️ Dashboard Overview
-![Dashboard Overview](<img width="1607" height="886" alt="image" src="https://github.com/user-attachments/assets/a6881b46-9c08-4de8-96dd-7f6ef7a2bbac" />
-)
+<img width="1607" height="886" alt="image" src="https://github.com/user-attachments/assets/a6881b46-9c08-4de8-96dd-7f6ef7a2bbac" />
+
 
 
 
 ### 🖼️ Hidden Gems - high rating , low cost
-![hidden gems](<img width="1335" height="675" alt="image" src="https://github.com/user-attachments/assets/a546614f-7a58-41e1-82ca-2143ab337224" />
-)
+<img width="1335" height="675" alt="image" src="https://github.com/user-attachments/assets/a546614f-7a58-41e1-82ca-2143ab337224" />
+
 
 
 ### 🖼️ Cuisine & Pricing Insights
-![Cuisine Insights](<img width="1492" height="872" alt="image" src="https://github.com/user-attachments/assets/34a24545-fd27-4bf1-b60d-78fe4388c362" />
-)
-
-
-### 🎥 Dashboard Walkthrough (Video)
-[![Watch the demo]](\docs\dashboard\data_analytics_demo.mp4)
+<img width="1492" height="872" alt="image" src="https://github.com/user-attachments/assets/34a24545-fd27-4bf1-b60d-78fe4388c362" />
 
 
 ---
