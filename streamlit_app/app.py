@@ -1,8 +1,4 @@
-"""
-Zomato Bangalore — Restaurant Analytics Dashboard
-Run with:  streamlit run app.py
-Place BangaloreZomatoData_clean.csv in the same folder (or upload it in the app).
-"""
+
 
 import pandas as pd
 import numpy as np
