@@ -1,16 +1,3 @@
-"""
-Run the Zomato SQL pipeline locally in VS Code using DuckDB.
-
-Folder layout expected (all in the same directory as this script):
-  - BangaloreZomatoData_clean.csv
-  - 02_ddl_schema.sql
-  - 03_analysis_queries.sql
-
-Usage:
-  pip install duckdb pandas
-  python run_queries.py
-"""
-
 import duckdb
 import pandas as pd
 
@@ -21,16 +8,16 @@ DB_FILE = "database\zomato.duckdb"
 CSV_FILE = "data\processed\BangaloreZomatoData_clean.csv"
 QUERIES_FILE = "database\\analysis_queries.sql"
 
-# ------------------------------------------------------------------
+
 # 1. Connect (creates zomato.duckdb if it doesn't exist yet)
-# ------------------------------------------------------------------
+
 con = duckdb.connect(DB_FILE)
 
-# ------------------------------------------------------------------
+
 # 2. Create the table directly from the cleaned CSV
 #    (simpler than running the DDL file + a separate COPY step —
 #    DuckDB infers types automatically from the CSV)
-# ------------------------------------------------------------------
+
 con.execute(f"""
     CREATE OR REPLACE TABLE zomato_restaurants AS
     SELECT
@@ -65,9 +52,9 @@ con.execute(f"""
 row_count = con.execute("SELECT COUNT(*) FROM zomato_restaurants").fetchone()[0]
 print(f"Loaded {row_count} rows into zomato_restaurants (in {DB_FILE})\n")
 
-# ------------------------------------------------------------------
+
 # 3. Read the 5 analysis queries from the .sql file and run each one
-# ------------------------------------------------------------------
+
 with open(QUERIES_FILE, "r") as f:
     sql_text = f.read()
 
