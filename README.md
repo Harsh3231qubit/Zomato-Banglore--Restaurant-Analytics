@@ -87,12 +87,14 @@ Performed in [`data_cleaning_EDA.ipynb`](notebooks\data_cleaning_EDA.ipynb):
 - **Univariate & bivariate EDA** — distribution plots for cost and ratings, boxplots of average cost across the top 10 localities, and review-volume analysis across cuisines
 
 ### 📸 EDA Visuals
-> Add exported chart images below (e.g. from the notebook's `plt.savefig` outputs)
 
-| Chart | Preview |
-|---|---|
-| Average Cost by Locality (Top 10) | `docs\plots\cost_by_locality.png` |
-| Rating Distribution | `docs\plots\01_rating_distributions.png` |
+
+
+
+ Average Cost by Locality (Top 10) <img width="1500" height="900" alt="image" src="https://github.com/user-attachments/assets/53e3d578-1c36-439f-83af-440f1d5dc7b5" />
+ 
+ Rating Distribution <img width="1800" height="750" alt="image" src="https://github.com/user-attachments/assets/2b61e5f1-0119-4a5a-afc1-a3140948cb25" />
+ 
 
 ---
 
@@ -194,16 +196,19 @@ LIMIT 25;
 
 
 ### 🖼️ Dashboard Overview
-![Dashboard Overview](docs\dashboard\localities_with_most_restaurants.png)
+![Dashboard Overview](<img width="1607" height="886" alt="image" src="https://github.com/user-attachments/assets/a6881b46-9c08-4de8-96dd-7f6ef7a2bbac" />
+)
 
 
 
 ### 🖼️ Hidden Gems - high rating , low cost
-![hidden gems](docs\dashboard\hidden_gems.png)
+![hidden gems](<img width="1335" height="675" alt="image" src="https://github.com/user-attachments/assets/a546614f-7a58-41e1-82ca-2143ab337224" />
+)
 
 
 ### 🖼️ Cuisine & Pricing Insights
-![Cuisine Insights](docs\dashboard\top_cuisines_by_volume.png)
+![Cuisine Insights](<img width="1492" height="872" alt="image" src="https://github.com/user-attachments/assets/34a24545-fd27-4bf1-b60d-78fe4388c362" />
+)
 
 
 ### 🎥 Dashboard Walkthrough (Video)
