@@ -5,7 +5,7 @@
 ## 📌 Table of Contents
 - [Problem Statement](#-problem-statement)
 - [Dataset Overview](#-dataset-overview)
-- [Tech Stack](#-tech-stack)
+- [Tech Stack](#-tech-stack) 
 - [Project Workflow](#-project-workflow)
 - [Data Cleaning & EDA](#-data-cleaning--eda)
 - [Business KPIs](#-business-kpis)
@@ -51,9 +51,8 @@ This project cleans, explores, and analyzes a real-world Zomato restaurant datas
 | **Visualization (EDA)** | Matplotlib, Seaborn |
 | **Data Querying / Analysis** | SQL (window functions, CTEs, aggregate analytics) |
 | **Notebook Environment** | Jupyter Notebook |
-| **Dashboard** | Streamlit, Plotly|
+| **Dashboard** | Streamlit, Python , Plotly |
 | **Version Control** | Git & GitHub |
-
 ---
 
 ## 🔄 Project Workflow
@@ -71,7 +70,7 @@ Exploratory Data Analysis (Seaborn / Matplotlib)
 SQL Analysis Layer (business questions → SQL queries)
       │
       ▼
-Interactive Dashboard (Streamlit,Plotly,Pandas)
+Interactive Dashboard (Streamlit, Plotly, Python)
 ```
 
 ---
@@ -97,14 +96,16 @@ Interactive Dashboard (Streamlit,Plotly,Pandas)
 
 ---
 
+
 ## 📈 Business KPIs
 
-| KPI | Description |
-|---|---|
-| **Restaurant Density per Locality** | Count of restaurants per locality — identifies supply concentration |
-| **Average Cost for Two** | Core pricing KPI, tracked by locality and cuisine |
-| **Top 3 Restaurants per Locality** | "Best-in-neighborhood" leaderboard, ranked by rating and review volume |
-| **Value Score (Hidden Gems)** | Restaurants rated above their cuisine's average while priced below the cuisine's median cost |
+| KPI                                   | Description                                                                                                   |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Restaurant Density per Locality**    | Count of restaurants per locality alongside average dinner rating and average cost — identifies where supply is concentrated and whether quality/pricing hold up under that density |
+| **Delivery Adoption & Satisfaction Impact** | Share of restaurants offering home delivery, compared against average delivery rating and review volume for delivery vs. non-delivery restaurants |
+| **Cuisine Engagement Score**           | Total reviews per cuisine (not just listing count) alongside average cost for two — measures real customer demand rather than apparent popularity |
+| **Top 3 Restaurants per Locality**     | "Best-in-neighborhood" leaderboard, ranked by dinner rating and review volume                                    |
+| **Value Score (Hidden Gems)**          | Restaurants rated above their cuisine's average rating while priced below the cuisine's median cost              |
 
 ---
 
@@ -121,6 +122,16 @@ GROUP BY locality
 ORDER BY restaurant_count DESC
 LIMIT 15;
 ```
+**Analysis:**
+
+| locality | restaurant_count | avg_dinner_rating | avg_cost_for_two_people |
+|---|---|---|---|
+| Electronic City | 673 | 3.60 | 278.0 |
+| Marathahalli | 484 | 3.55 | 301.0 |
+| HSR | 457 | 3.73 | 313.0 |
+| Whitefield | 447 | 3.66 | 337.0 |
+
+
 **Significance:** Surfaces where restaurant supply is most concentrated in Bangalore and whether average dining quality holds up under that competitive density — critical for site-selection and market-saturation decisions.
 
 ### Q2 — Home Delivery vs. Delivery Satisfaction
@@ -131,6 +142,14 @@ SELECT is_home_delivery, COUNT(*) AS restaurant_count,
 FROM zomato_restaurants
 GROUP BY is_home_delivery;
 ```
+**Analysis:**
+
+| is_home_delivery | restaurant_count | avg_delivery_rating | avg_delivery_reviews |
+|---|---|---|---|
+| 0 | 19 | 3.79 | 122.0 |
+| 1 | 8,902 | 3.88 | 2,019.0 |
+
+
 **Significance:** Tests whether offering delivery genuinely improves customer satisfaction or whether delivery-enabled restaurants suffer lower ratings from operational strain — informs platform-level delivery policy and restaurant operations advice.
 
 ### Q3 — Cuisine Popularity by Review Volume
@@ -143,7 +162,17 @@ GROUP BY primary_cuisine
 ORDER BY total_reviews DESC
 LIMIT 10;
 ```
+**Analysis:**
+
+| primary_cuisine | listings | total_reviews | avg_cost_for_two |
+|---|---|---|---|
+| North Indian | 1,619 | 4,594,638 | 386.0 |
+| South Indian | 958 | 2,593,178 | 279.0 |
+| Biryani | 970 | 2,479,334 | 301.0 |
+
+
 **Significance:** Ranks cuisines by actual customer engagement (review volume) rather than raw listing count, alongside their price point — guides menu strategy, marketing spend, and new-outlet cuisine selection.
+
 
 ### Q4 — Top 3 Restaurants per Locality
 ```sql
@@ -161,7 +190,21 @@ FROM ranked
 WHERE rank_in_locality <= 3
 ORDER BY locality, rank_in_locality;
 ```
+**Analysis:**
+
+| locality | name | dinner_rating | dinner_reviews | rank_in_locality |
+|---|---|---|---|---|
+| 1 MG Road Mall | Yauatcha | 4.7 | 2,933 | 1 |
+| 1 MG Road Mall | Fruitify | 3.4 | 4 | 2 |
+| Ascendas Park Square | Barbeque Nation | 4.5 | 2,568 | 1 |
+| Ascendas Park Square | Deccan Paradise | 4.2 | 454 | 2 |
+| Ascendas Park Square | Amoeba Sports Bar | 4.0 | 667 | 3 |
+| BTM | AB's - Absolute Barbecues | 4.7 | 7,984 | 1 |
+| BTM | Nagarjuna | 4.3 | 1,702 | 2 |
+
+
 **Significance:** Produces a ready-to-use "best in neighborhood" leaderboard — directly deployable for a recommendation feature, local marketing push, or partnership prioritization.
+
 
 ### Q5 — Hidden Gems: Value-for-Money Outliers
 ```sql
@@ -182,9 +225,19 @@ WHERE r.dinner_rating > cs.cuisine_avg_rating
 ORDER BY r.dinner_rating DESC
 LIMIT 25;
 ```
+**Analysis:**
+
+| name | primary_cuisine | locality | dinner_rating | average_cost | cuisine_avg_rating | cuisine_median_cost |
+|---|---|---|---|---|---|---|
+| CTR Shri Sagar | South Indian | Malleshwaram | 4.9 | 150 | 3.55 | 300.0 |
+| Brahmin's Coffee Bar | South Indian | Basavanagudi | 4.9 | 100 | 3.55 | 300.0 |
+| Natural Ice Cream | Ice Cream | Koramangala 1st Block | 4.8 | 300 | 3.70 | 350.0 |
+| Arogya Ahaara | South Indian | HSR | 4.8 | 100 | 3.55 | 300.0 |
+
+
 **Significance:** Flags restaurants that outperform their cuisine's average rating while staying below the median cost — a data-driven "hidden gem" finder for consumer recommendations and competitive benchmarking.
 
----
+
 
 ## 📊 Dashboard
 
@@ -210,8 +263,6 @@ LIMIT 25;
 
 - 🏙️ **Restaurant distribution is heavily concentrated in Bangalore's IT corridors**, with Electronic City, Marathahalli, HSR, and Whitefield accounting for the highest restaurant density, reflecting strong demand from working professionals.
 
-- 🚚 **Home delivery has become the industry standard**, with over **99% of restaurants offering delivery**. Delivery-enabled restaurants receive **16× more customer reviews** on average, highlighting significantly higher customer engagement and online visibility.
-
 - 🍛 **North Indian cuisine dominates the food landscape**, generating the highest customer engagement with **4.59 million reviews**, followed by **South Indian (2.59 million)** and **Biryani (2.48 million)**, making them the most popular cuisines in Bangalore.
 
 - ⭐ **Top-rated restaurants are spread across multiple localities** rather than being concentrated in premium neighborhoods, indicating that exceptional dining experiences are available throughout the city.
@@ -232,7 +283,7 @@ BANGALORE_ZOMATO_ANALYTICS_PROJECT/
 │
 ├── data/
 │   ├── raw/
-│   │   |── BangaloreZomatoData.csv
+│   │   └── BangaloreZomatoData.csv
 │   │  
 │   │
 │   └── processed/
@@ -264,5 +315,5 @@ BANGALORE_ZOMATO_ANALYTICS_PROJECT/
 └── streamlit_app/
     └── app.py
 
----
+```
 
